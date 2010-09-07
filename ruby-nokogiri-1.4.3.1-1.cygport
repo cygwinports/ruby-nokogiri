@@ -1,0 +1,27 @@
+ORIG_PN="nokogiri"
+inherit ruby
+
+DESCRIPTION="Ruby HTML/XML/SAX library"
+HOMEPAGE="http://nokogiri.org/"
+SRC_URI="http://rubygems.org/downloads/nokogiri-${PV}.gem"
+
+RDOC_MODULE="Nokogiri"
+
+src_compile() {
+	lndirs
+	cd ${B}/ext/nokogiri
+	ruby_ext_compile
+
+	cd ${B}
+	ruby_rdoc_compile lib ext/nokogiri
+}
+
+src_install() {
+	cd ${B}
+	dobin bin/*
+	doruby lib/*
+	dodoc *.rdoc
+
+	cd ${B}/ext/nokogiri
+	cyginstall
+}
