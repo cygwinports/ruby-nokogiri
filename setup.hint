@@ -1,6 +1,0 @@
-category: Ruby
-requires: ruby libxml2 libxslt
-sdesc: "Ruby HTML/XML/SAX parser"
-ldesc: "Nokogiri is an HTML, XML, SAX, and Reader parser. Among 
-Nokogiri’s many features is the ability to search documents via XPath or 
-CSS3 selectors."

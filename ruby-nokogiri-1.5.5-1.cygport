@@ -1,0 +1,7 @@
+inherit rubygem
+
+SUMMARY="Ruby HTML/XML/SAX library"
+DESCRIPTION="Nokogiri is an HTML, XML, SAX, and Reader parser for Ruby.
+Among Nokogiri’s many features is the ability to search documents via
+XPath or CSS3 selectors."
+HOMEPAGE="http://nokogiri.org/"
