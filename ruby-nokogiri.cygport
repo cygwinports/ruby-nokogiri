@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-nokogiri"
-VERSION=1.5.10
+VERSION=1.6.3.1
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby HTML/XML/SAX library"
@@ -9,3 +9,14 @@ DESCRIPTION="Nokogiri is an HTML, XML, SAX, and Reader parser for Ruby.
 Among Nokogiri’s many features is the ability to search documents via
 XPath or CSS3 selectors."
 HOMEPAGE="http://nokogiri.org/"
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_nokogiri_CONTENTS="usr/bin/nokogiri ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_nokogiri_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	sed -i -e '/mini_portile/d' -e 's|, "ports/[^"]*"||g' *.gemspec
+}
+
+RUBYGEM_CONFIGURE_ARGS="--use-system-libraries"
