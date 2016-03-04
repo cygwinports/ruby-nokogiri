@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-nokogiri"
-VERSION=1.6.6.2
+VERSION=1.6.7.2
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby HTML/XML/SAX library"
@@ -9,6 +9,7 @@ DESCRIPTION="Nokogiri is an HTML, XML, SAX, and Reader parser for Ruby.
 Among Nokogiri’s many features is the ability to search documents via
 XPath or CSS3 selectors."
 HOMEPAGE="http://nokogiri.org/"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/rpms/rubygem-nokogiri.git/plain/rubygem-nokogiri-1.6.6.4-shutdown-libxml2-warning.patch"
 
 PKG_NAMES="${NAME} ${NAME}-doc"
 ruby_nokogiri_CONTENTS="usr/bin/nokogiri ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
